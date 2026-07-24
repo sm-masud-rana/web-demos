@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rahman &amp; Associates — Adv. Tanvir Rahman, Attorney at Law</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #0d1b2a;
+      --charcoal: #1b263b;
+      --slate: #415a77;
+      --gold: #c9a24b;
+      --gold-light: #e3c877;
+      --paper: #f7f5f0;
+      --white: #ffffff;
+      --text: #2b2b2b;
+      --muted: #6b7280;
+      --line: rgba(201,162,75,.35);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text);
+      background: var(--paper);
+      line-height: 1.7;
+    }
+    h1, h2, h3, .serif { font-family: 'Playfair Display', Georgia, serif; }
+    a { text-decoration: none; color: inherit; }
+    img { display: block; max-width: 100%; }
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+    .gold { color: var(--gold); }
+    .eyebrow {
+      text-transform: uppercase; letter-spacing: .22em; font-size: .78rem;
+      font-weight: 600; color: var(--gold); margin-bottom: 14px;
+    }
+    .btn {
+      display: inline-block; background: var(--gold); color: var(--navy);
+      padding: 15px 30px; border-radius: 2px; font-weight: 600; font-size: .95rem;
+      letter-spacing: .03em; border: 1px solid var(--gold); cursor: pointer;
+      transition: all .25s ease;
+    }
+    .btn:hover { background: transparent; color: var(--gold); }
+    .btn-outline { background: transparent; color: var(--gold); }
+    .btn-outline:hover { background: var(--gold); color: var(--navy); }
+
+    header {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(13,27,42,.96); backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(201,162,75,.2);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 76px; }
+    .brand { display: flex; align-items: center; gap: 12px; color: var(--white); }
+    .brand .mark {
+      width: 42px; height: 42px; border: 1.5px solid var(--gold); color: var(--gold);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.2rem;
+    }
+    .brand .name { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 600; letter-spacing: .02em; }
+    .brand .sub { font-size: .68rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); }
+    .nav-links { display: flex; gap: 30px; }
+    .nav-links a { color: #d7dce3; font-size: .92rem; font-weight: 500; transition: color .2s; }
+    .nav-links a:hover { color: var(--gold); }
+    .menu-btn { display: none; background: none; border: none; color: var(--gold); font-size: 1.6rem; cursor: pointer; }
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex; flex-direction: column; position: absolute; top: 76px; left: 0; right: 0;
+        background: var(--navy); padding: 20px 24px; gap: 18px; border-bottom: 1px solid var(--line);
+      }
+      .menu-btn { display: block; }
+      .nav .btn { display: none; }
+    }
+
+    .hero {
+      position: relative; color: var(--white);
+      background:
+        linear-gradient(rgba(13,27,42,.86), rgba(13,27,42,.92)),
+        url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1600&q=80') center/cover;
+    }
+    .hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 56px; align-items: center; padding: 96px 0; }
+    .hero h1 { font-size: 3.4rem; line-height: 1.1; font-weight: 700; margin-bottom: 20px; }
+    .hero h1 span { color: var(--gold); }
+    .hero .lead { font-size: 1.15rem; color: #cdd4de; max-width: 52ch; margin-bottom: 20px; font-weight: 300; }
+    .hero .creds { display: flex; flex-wrap: wrap; gap: 10px 22px; margin-bottom: 32px; font-size: .9rem; color: var(--gold-light); }
+    .hero .creds span { display: flex; align-items: center; gap: 8px; }
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+    .hero-photo {
+      position: relative; border: 1px solid var(--line); padding: 12px;
+    }
+    .hero-photo img { width: 100%; aspect-ratio: 4/5; object-fit: cover; filter: grayscale(15%); }
+    .hero-photo .badge {
+      position: absolute; bottom: -18px; left: -18px; background: var(--gold); color: var(--navy);
+      padding: 16px 22px; text-align: center;
+    }
+    .hero-photo .badge .n { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; line-height: 1; }
+    .hero-photo .badge .l { font-size: .72rem; text-transform: uppercase; letter-spacing: .12em; }
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 48px; padding: 64px 0; text-align: center; }
+      .hero h1 { font-size: 2.4rem; }
+      .hero .creds, .hero-actions { justify-content: center; }
+      .hero .lead { margin-left: auto; margin-right: auto; }
+      .hero-photo { max-width: 340px; margin: 0 auto; }
+    }
+
+    .trust { background: var(--navy); border-top: 1px solid rgba(201,162,75,.15); }
+    .trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; padding: 40px 0; text-align: center; color: var(--white); }
+    .trust .n { font-family: 'Playfair Display', serif; font-size: 2.4rem; color: var(--gold); font-weight: 700; }
+    .trust .l { font-size: .82rem; text-transform: uppercase; letter-spacing: .12em; color: #aab4c0; margin-top: 4px; }
+    @media (max-width: 700px) { .trust-grid { grid-template-columns: repeat(2, 1fr); gap: 32px 16px; } }
+
+    section { padding: 96px 0; }
+    .section-head { max-width: 720px; margin: 0 auto 60px; text-align: center; }
+    .section-head h2 { font-size: 2.5rem; color: var(--navy); margin-bottom: 16px; }
+    .section-head p { color: var(--muted); font-size: 1.05rem; }
+    .divider { width: 60px; height: 2px; background: var(--gold); margin: 18px auto 0; }
+
+    .about-grid { display: grid; grid-template-columns: .95fr 1.05fr; gap: 60px; align-items: center; }
+    .about-photo { position: relative; border: 1px solid var(--line); padding: 12px; }
+    .about-photo img { width: 100%; aspect-ratio: 3/4; object-fit: cover; }
+    .about h2 { font-size: 2.3rem; color: var(--navy); margin-bottom: 8px; }
+    .about .role { color: var(--gold); font-weight: 600; letter-spacing: .05em; margin-bottom: 20px; }
+    .about p { color: #4b5563; margin-bottom: 16px; }
+    .cred-list { list-style: none; margin-top: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .cred-list li { display: flex; gap: 12px; align-items: flex-start; font-size: .93rem; color: #374151; }
+    .cred-list .ic { color: var(--gold); font-weight: 700; }
+    @media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; gap: 40px; } .cred-list { grid-template-columns: 1fr; } }
+
+    .practice { background: var(--charcoal); color: var(--white); }
+    .practice .section-head h2 { color: var(--white); }
+    .practice .section-head p { color: #aab4c0; }
+    .pa-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .pa-card {
+      background: rgba(255,255,255,.03); border: 1px solid rgba(201,162,75,.2);
+      padding: 34px 28px; transition: transform .25s ease, border-color .25s ease, background .25s ease;
+    }
+    .pa-card:hover { transform: translateY(-6px); border-color: var(--gold); background: rgba(201,162,75,.06); }
+    .pa-card .ic { font-size: 2rem; margin-bottom: 16px; }
+    .pa-card h3 { font-size: 1.3rem; color: var(--gold-light); margin-bottom: 10px; }
+    .pa-card p { color: #b7c0cc; font-size: .92rem; }
+    @media (max-width: 900px) { .pa-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 620px) { .pa-grid { grid-template-columns: 1fr; } }
+
+    .results-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .result-card {
+      background: var(--white); border: 1px solid #e7e2d6; border-top: 3px solid var(--gold);
+      padding: 32px 28px; box-shadow: 0 6px 18px rgba(13,27,42,.04);
+    }
+    .result-card .amt { font-family: 'Playfair Display', serif; font-size: 2.1rem; color: var(--navy); font-weight: 700; }
+    .result-card .type { color: var(--gold); font-weight: 600; font-size: .82rem; text-transform: uppercase; letter-spacing: .1em; margin: 6px 0 12px; }
+    .result-card p { color: #4b5563; font-size: .92rem; }
+    @media (max-width: 900px) { .results-grid { grid-template-columns: 1fr; } }
+
+    .testi { background: var(--navy); color: var(--white); }
+    .testi .section-head h2 { color: var(--white); }
+    .testi .section-head p { color: #aab4c0; }
+    .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .testi-card { background: rgba(255,255,255,.04); border: 1px solid rgba(201,162,75,.18); padding: 32px 28px; }
+    .testi-card .stars { color: var(--gold); margin-bottom: 14px; letter-spacing: 2px; }
+    .testi-card p { font-style: italic; color: #d7dce3; margin-bottom: 20px; }
+    .testi-who { display: flex; align-items: center; gap: 12px; }
+    .testi-who img { width: 46px; height: 46px; border-radius: 50%; object-fit: cover; }
+    .testi-who .nm { font-weight: 600; color: var(--white); font-size: .95rem; }
+    .testi-who .rl { color: var(--gold); font-size: .8rem; }
+    @media (max-width: 900px) { .testi-grid { grid-template-columns: 1fr; } }
+
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+    .contact-info h2 { font-size: 2.3rem; color: var(--navy); margin-bottom: 16px; }
+    .contact-info p { color: #4b5563; margin-bottom: 28px; }
+    .info-item { display: flex; gap: 16px; margin-bottom: 22px; }
+    .info-item .ic { width: 44px; height: 44px; flex: none; background: var(--navy); color: var(--gold); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
+    .info-item .t { font-weight: 600; color: var(--navy); }
+    .info-item .d { color: var(--muted); font-size: .92rem; }
+    form.booking { background: var(--white); border: 1px solid #e7e2d6; padding: 36px; box-shadow: 0 10px 30px rgba(13,27,42,.06); }
+    form.booking h3 { font-size: 1.5rem; color: var(--navy); margin-bottom: 6px; }
+    form.booking .fp { color: var(--muted); font-size: .9rem; margin-bottom: 24px; }
+    .field { margin-bottom: 18px; }
+    .field label { display: block; font-size: .82rem; font-weight: 600; color: var(--navy); margin-bottom: 7px; letter-spacing: .02em; }
+    .field input, .field select, .field textarea {
+      width: 100%; padding: 13px 14px; border: 1px solid #d7d2c4; border-radius: 2px;
+      font-family: inherit; font-size: .95rem; background: var(--paper); transition: border-color .2s;
+    }
+    .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--gold); }
+    .field textarea { min-height: 110px; resize: vertical; }
+    form.booking .btn { width: 100%; }
+    .form-note { font-size: .78rem; color: var(--muted); margin-top: 14px; text-align: center; }
+    @media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; gap: 40px; } }
+
+    .map { height: 420px; width: 100%; filter: grayscale(30%) contrast(1.05); border: 0; }
+
+    footer { background: #0a1420; color: #9aa6b4; padding: 64px 0 28px; }
+    .foot-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+    footer h4 { font-family: 'Playfair Display', serif; color: var(--white); font-size: 1.15rem; margin-bottom: 16px; }
+    footer .brand-foot { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; color: var(--white); }
+    footer p, footer li { font-size: .9rem; line-height: 1.9; }
+    footer ul { list-style: none; }
+    footer a:hover { color: var(--gold); }
+    .foot-bottom { border-top: 1px solid rgba(255,255,255,.08); padding-top: 22px; text-align: center; font-size: .82rem; color: #6b7686; }
+    @media (max-width: 800px) { .foot-grid { grid-template-columns: 1fr; gap: 28px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a href="#home" class="brand">
+        <div class="mark">R</div>
+        <div>
+          <div class="name">Rahman &amp; Associates</div>
+          <div class="sub">Attorneys at Law</div>
+        </div>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#about" onclick="closeMenu()">About</a>
+        <a href="#practice" onclick="closeMenu()">Practice Areas</a>
+        <a href="#results" onclick="closeMenu()">Case Results</a>
+        <a href="#testimonials" onclick="closeMenu()">Testimonials</a>
+        <a href="#contact" onclick="closeMenu()">Contact</a>
+      </nav>
+      <a href="#contact" class="btn">Free Consultation</a>
+      <button class="menu-btn" onclick="toggleMenu()" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Trusted Legal Counsel Since 2006</div>
+        <h1>Protecting Your Rights With <span>Integrity</span> &amp; Experience</h1>
+        <p class="lead">Adv. Tanvir Rahman is a dedicated trial attorney helping individuals and businesses navigate complex legal challenges with clarity, discretion, and results.</p>
+        <div class="creds">
+          <span>⚖️ Bar Council Reg. No. 12847</span>
+          <span>🎓 LL.M., University of Dhaka</span>
+          <span>🏆 18+ Years of Practice</span>
+        </div>
+        <div class="hero-actions">
+          <a href="#contact" class="btn">Book a Free Consultation</a>
+          <a href="#practice" class="btn btn-outline">Our Practice Areas</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80" alt="Adv. Tanvir Rahman" />
+        <div class="badge">
+          <div class="n">98%</div>
+          <div class="l">Success Rate</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="trust">
+    <div class="container trust-grid">
+      <div><div class="n">18+</div><div class="l">Years Experience</div></div>
+      <div><div class="n">1,200+</div><div class="l">Cases Handled</div></div>
+      <div><div class="n">98%</div><div class="l">Success Rate</div></div>
+      <div><div class="n">24/7</div><div class="l">Client Support</div></div>
+    </div>
+  </div>
+
+  <section class="about" id="about">
+    <div class="container about-grid">
+      <div class="about-photo">
+        <img src="https://images.unsplash.com/photo-1573497491208-6b1acb260507?auto=format&fit=crop&w=700&q=80" alt="Attorney portrait" />
+      </div>
+      <div>
+        <div class="eyebrow">About the Attorney</div>
+        <h2>Adv. Tanvir Rahman</h2>
+        <div class="role">Founding Partner &middot; Trial Attorney</div>
+        <p>With more than 18 years at the bar, Tanvir Rahman has built a reputation for meticulous preparation and unwavering advocacy. He has represented clients before trial courts, the High Court Division, and arbitral tribunals across a broad range of civil and criminal matters.</p>
+        <p>His practice is grounded in a simple belief: every client deserves honest advice, clear communication, and a lawyer who fights for the best possible outcome.</p>
+        <ul class="cred-list">
+          <li><span class="ic">✓</span> Enrolled, Bangladesh Bar Council (2006)</li>
+          <li><span class="ic">✓</span> LL.M. in Corporate Law, University of Dhaka</li>
+          <li><span class="ic">✓</span> Member, Supreme Court Bar Association</li>
+          <li><span class="ic">✓</span> Certified Mediator &amp; Arbitrator</li>
+          <li><span class="ic">✓</span> Panel Counsel for leading corporates</li>
+          <li><span class="ic">✓</span> Guest Lecturer, Faculty of Law</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="practice" id="practice">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">What We Do</div>
+        <h2>Practice Areas</h2>
+        <p>Comprehensive legal representation tailored to your needs, backed by nearly two decades of courtroom experience.</p>
+        <div class="divider"></div>
+      </div>
+      <div class="pa-grid">
+        <div class="pa-card"><div class="ic">👨‍👩‍👧‍👦</div><h3>Family Law</h3><p>Divorce, child custody, maintenance, guardianship and marital property disputes handled with sensitivity and discretion.</p></div>
+        <div class="pa-card"><div class="ic">🏢</div><h3>Corporate &amp; Commercial</h3><p>Company formation, contracts, mergers, compliance and shareholder disputes for startups and enterprises.</p></div>
+        <div class="pa-card"><div class="ic">⚖️</div><h3>Criminal Defense</h3><p>Strategic defense in criminal proceedings, bail applications and appeals with a strong trial record.</p></div>
+        <div class="pa-card"><div class="ic">🏠</div><h3>Real Estate &amp; Property</h3><p>Land title verification, transfers, tenancy, and resolution of property and inheritance disputes.</p></div>
+        <div class="pa-card"><div class="ic">💼</div><h3>Employment &amp; Labor</h3><p>Wrongful termination, workplace disputes, service matters and labor tribunal representation.</p></div>
+        <div class="pa-card"><div class="ic">🤝</div><h3>Civil Litigation</h3><p>Money recovery, injunctions, contractual disputes and arbitration before all forums.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="results" id="results">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Proven Track Record</div>
+        <h2>Case Results &amp; Achievements</h2>
+        <p>A selection of representative outcomes. Past results do not guarantee future outcomes.</p>
+        <div class="divider"></div>
+      </div>
+      <div class="results-grid">
+        <div class="result-card"><div class="amt">৳ 4.2 Cr</div><div class="type">Commercial Arbitration</div><p>Recovered outstanding contractual dues for a manufacturing client after a two-year arbitration.</p></div>
+        <div class="result-card"><div class="amt">Acquittal</div><div class="type">Criminal Defense</div><p>Full acquittal secured for a client wrongfully charged, following a successful trial defense.</p></div>
+        <div class="result-card"><div class="amt">Custody Won</div><div class="type">Family Law</div><p>Obtained favorable custody and maintenance orders protecting a mother and two children.</p></div>
+        <div class="result-card"><div class="amt">৳ 1.8 Cr</div><div class="type">Property Dispute</div><p>Restored clear title and possession of disputed land held under fraudulent transfer.</p></div>
+        <div class="result-card"><div class="amt">Injunction</div><div class="type">Corporate</div><p>Secured urgent injunction preventing unlawful transfer of company shares.</p></div>
+        <div class="result-card"><div class="amt">Reinstated</div><div class="type">Employment</div><p>Won reinstatement with back-pay for an employee unlawfully dismissed after 11 years.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testi" id="testimonials">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Client Voices</div>
+        <h2>What Clients Say</h2>
+        <p>Trusted by individuals and businesses across the country.</p>
+        <div class="divider"></div>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p>“Mr. Rahman handled my case with remarkable professionalism. He explained every step and never left me in the dark. Truly the best decision I made.”</p>
+          <div class="testi-who"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="" /><div><div class="nm">Arif Hossain</div><div class="rl">Business Owner</div></div></div>
+        </div>
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p>“Compassionate, sharp, and relentless. During a difficult custody battle, his guidance gave me confidence and, ultimately, a fair outcome.”</p>
+          <div class="testi-who"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="" /><div><div class="nm">Farzana Akter</div><div class="rl">Client, Family Law</div></div></div>
+        </div>
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p>“Our company relies on Rahman &amp; Associates for all corporate matters. Responsive, strategic, and always prepared. Highly recommended.”</p>
+          <div class="testi-who"><img src="https://randomuser.me/api/portraits/men/68.jpg" alt="" /><div><div class="nm">Shahed Kabir</div><div class="rl">Managing Director</div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="container contact-grid">
+      <div class="contact-info">
+        <div class="eyebrow">Get in Touch</div>
+        <h2>Request a Free Consultation</h2>
+        <p>Tell us briefly about your matter and we’ll get back to you within one business day. All inquiries are confidential.</p>
+        <div class="info-item"><div class="ic">📍</div><div><div class="t">Office</div><div class="d">Suite 5B, Concord Tower, 113 Kazi Nazrul Islam Ave, Dhaka 1000</div></div></div>
+        <div class="info-item"><div class="ic">📞</div><div><div class="t">Phone</div><div class="d">+880 1700-000000</div></div></div>
+        <div class="info-item"><div class="ic">✉️</div><div><div class="t">Email</div><div class="d">contact@rahmanlaw.example</div></div></div>
+        <div class="info-item"><div class="ic">🕒</div><div><div class="t">Office Hours</div><div class="d">Sun–Thu, 10:00 AM – 7:00 PM</div></div></div>
+      </div>
+      <form class="booking" onsubmit="event.preventDefault(); this.reset(); document.getElementById('okMsg').style.display='block';">
+        <h3>Book Your Consultation</h3>
+        <div class="fp">No obligation. Response within 24 hours.</div>
+        <div class="field"><label>Full Name</label><input type="text" placeholder="Your name" required /></div>
+        <div class="field"><label>Phone Number</label><input type="tel" placeholder="+880 1XXX-XXXXXX" required /></div>
+        <div class="field"><label>Case Type</label>
+          <select required>
+            <option value="" disabled selected>Select a practice area</option>
+            <option>Family Law</option>
+            <option>Corporate &amp; Commercial</option>
+            <option>Criminal Defense</option>
+            <option>Real Estate &amp; Property</option>
+            <option>Employment &amp; Labor</option>
+            <option>Civil Litigation</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="field"><label>Message</label><textarea placeholder="Briefly describe your legal matter..." required></textarea></div>
+        <button type="submit" class="btn">Request Free Consultation</button>
+        <div class="form-note" id="okMsg" style="display:none; color:#1b7a3d; font-weight:600;">✓ Thank you! Your request has been received (demo). We’ll be in touch shortly.</div>
+        <div class="form-note">🔒 Your information is kept strictly confidential.</div>
+      </form>
+    </div>
+  </section>
+
+  <iframe class="map" title="Office location" loading="lazy" allowfullscreen
+    src="https://www.google.com/maps?q=Kazi+Nazrul+Islam+Avenue,+Dhaka&output=embed"></iframe>
+
+  <footer>
+    <div class="container">
+      <div class="foot-grid">
+        <div>
+          <div class="brand-foot">
+            <div class="mark" style="width:40px;height:40px;border:1.5px solid var(--gold);color:var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-weight:700;">R</div>
+            <div style="font-family:'Playfair Display',serif;font-size:1.2rem;">Rahman &amp; Associates</div>
+          </div>
+          <p>Trusted legal counsel providing dedicated representation in family, corporate, criminal, and civil matters for over 18 years.</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#practice">Practice Areas</a></li>
+            <li><a href="#results">Case Results</a></li>
+            <li><a href="#contact">Free Consultation</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li>📍 Suite 5B, Concord Tower, Dhaka 1000</li>
+            <li>📞 +880 1700-000000</li>
+            <li>✉️ contact@rahmanlaw.example</li>
+            <li>🕒 Sun–Thu, 10 AM – 7 PM</li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        © 2026 Rahman &amp; Associates. All rights reserved. &middot; Demo website — self-directed practice project. Attorney Advertising. Prior results do not guarantee a similar outcome.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() { document.getElementById('navLinks').classList.toggle('open'); }
+    function closeMenu() { document.getElementById('navLinks').classList.remove('open'); }
+  </script>
+</body>
+</html>
