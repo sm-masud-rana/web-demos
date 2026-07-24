@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Md. Masud Rana — Web Demos</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --surface: #1e293b;
+      --border: #334155;
+      --text: #ffffff;
+      --muted: #94a3b8;
+      --accent: #3b82f6;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 64px 24px;
+      line-height: 1.5;
+    }
+    .wrap { max-width: 1120px; margin: 0 auto; }
+    .header { text-align: center; margin-bottom: 56px; }
+    .header h1 { font-size: 2.6rem; letter-spacing: -0.02em; margin-bottom: 12px; }
+    .header p { color: var(--muted); font-size: 1.15rem; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      text-decoration: none;
+      color: var(--text);
+      transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: var(--accent);
+      box-shadow: 0 12px 30px rgba(0,0,0,.4);
+    }
+    .card .thumb {
+      height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.2rem;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    }
+    .card .body { padding: 22px; }
+    .card h3 { font-size: 1.2rem; margin-bottom: 6px; }
+    .card p { color: var(--muted); font-size: .92rem; }
+    .footer {
+      text-align: center;
+      margin-top: 60px;
+      color: #64748b;
+      font-size: .9rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="header">
+      <h1>Md. Masud Rana</h1>
+      <p>Web Development Portfolio — Live Demo Websites</p>
+    </div>
+
+    <div class="grid">
+      <!-- ===== LIVE DEMO CARDS ===== -->
+      <a class="card" href="doctor/" target="_blank" rel="noopener">
+        <div class="thumb">🩺</div>
+        <div class="body">
+          <h3>Doctor Portfolio</h3>
+          <p>Medical profile with appointment booking &amp; clinic info</p>
+        </div>
+      </a>
+
+      <!-- ========================================================= -->
+      <!-- HOW TO ADD A NEW SITE:                                     -->
+      <!-- 1. Create a new folder, e.g.  restaurant/index.html       -->
+      <!-- 2. Copy the card block below, paste it above this comment  -->
+      <!-- 3. Change href, emoji, title and description               -->
+      <!--                                                            -->
+      <!-- <a class="card" href="restaurant/" target="_blank" rel="noopener"> -->
+      <!--   <div class="thumb">🍽️</div>                              -->
+      <!--   <div class="body">                                       -->
+      <!--     <h3>Restaurant / Café</h3>                             -->
+      <!--     <p>Menu, table booking &amp; gallery</p>               -->
+      <!--   </div>                                                   -->
+      <!-- </a>                                                       -->
+      <!--                                                            -->
+      <!-- <a class="card" href="lawyer/" target="_blank" rel="noopener"> -->
+      <!--   <div class="thumb">⚖️</div>                              -->
+      <!--   <div class="body">                                       -->
+      <!--     <h3>Lawyer / Legal</h3>                                -->
+      <!--     <p>Practice areas &amp; free consultation</p>          -->
+      <!--   </div>                                                   -->
+      <!-- </a>                                                       -->
+      <!-- ========================================================= -->
+    </div>
+
+    <div class="footer">© 2026 Md. Masud Rana — All demos are self-directed practice projects.</div>
+  </div>
+</body>
+</html>
