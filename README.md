@@ -1,57 +1,42 @@
-# Web Demos — Client Demo Websites
+# Web Demos — Portfolio Demo Websites
 
-A single, scalable portfolio repository that holds many demo websites. One link, many sites.
+A scalable portfolio repository containing multiple self-directed website demos. One link, many sites.
 
 **By:** Md. Masud Rana · 🌐 [mdmasudrana.xo.je](https://mdmasudrana.xo.je)
 
----
+## 🔴 Live demos
 
-## 🔴 Live Demo
+- `/` — Main demo hub
+- `/doctor/` — Doctor portfolio
+- `/lawyer/` — Lawyer / attorney website
+- `/restaurant/` — Animated restaurant / café website
 
-Once deployed (Vercel / GitHub Pages), the structure works like this:
+## Structure
 
-- `/` → Main hub (all demo sites)
-- `/doctor/` → Doctor Portfolio demo
-- `/restaurant/` → Restaurant demo (add later)
-- `/lawyer/` → Lawyer demo (add later)
-
----
-
-## 🗂️ Folder Structure
-
-```
+```text
 web-demos/
-├─ index.html        # Main hub — links to every demo site
+├─ index.html
 ├─ README.md
-├─ .gitignore
-└─ doctor/
-    └─ index.html    # Doctor Portfolio demo site
+├─ doctor/index.html
+├─ lawyer/index.html
+└─ restaurant/
+   ├─ index.html
+   └─ README.md
 ```
 
----
+## View online
 
-## ➕ How to add a new site (3 steps)
+- Hub: `https://sm-masud-rana.github.io/web-demos/`
+- Restaurant: `https://sm-masud-rana.github.io/web-demos/restaurant/`
 
-1. Create a new folder with its own `index.html`, e.g. `lawyer/index.html`.
-2. Add a card in the main `index.html` (copy the example card in the HTML comments).
-3. Commit & push:
-   ```bash
-   git add .
-   git commit -m "Add lawyer demo"
-   git push
-   ```
+## Run locally
 
-The new site goes live automatically at `/lawyer/`.
+Download or clone the repository, then open the relevant `index.html` in a browser. No install or build command is needed.
 
----
+## Technology
 
-## 🛠️ Tech
+Plain HTML, CSS and JavaScript. Each demo is self-contained and requires no build step.
 
-- HTML, CSS, JavaScript (no build step — plain static files)
-- Each site is a self-contained `index.html`
+## Portfolio note
 
----
-
-## ℹ️ Note
-
-All demos are **self-directed practice projects**. They use demo/placeholder content — no real client data.
+All demos are self-directed practice projects with fictional content. No real client relationship is implied.
