@@ -10,6 +10,7 @@ A scalable portfolio repository containing multiple self-directed website demos.
 - `/doctor/` — Doctor portfolio
 - `/lawyer/` — Lawyer / attorney website
 - `/restaurant/` — Animated restaurant / café website
+- `/consultant/` — Animated business consultant / coach website
 
 ## Structure
 
@@ -19,7 +20,10 @@ web-demos/
 ├─ README.md
 ├─ doctor/index.html
 ├─ lawyer/index.html
-└─ restaurant/
+├─ restaurant/
+│  ├─ index.html
+│  └─ README.md
+└─ consultant/
    ├─ index.html
    └─ README.md
 ```
@@ -28,10 +32,13 @@ web-demos/
 
 - Hub: `https://sm-masud-rana.github.io/web-demos/`
 - Restaurant: `https://sm-masud-rana.github.io/web-demos/restaurant/`
+- Consultant: `https://sm-masud-rana.github.io/web-demos/consultant/`
 
 ## Run locally
 
 Download or clone the repository, then open the relevant `index.html` in a browser. No install or build command is needed.
+
+Each project folder includes its own `README.md` with customization and usage instructions.
 
 ## Technology
 
